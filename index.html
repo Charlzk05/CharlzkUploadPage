@@ -1,46 +1,36 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>Charlzk Uploader</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-  <center>
-    <h2 style="font-weight: 600">Charlzk File Uploader</h2>
-    <form ref="uploadForm" id="uploadForm" action="https://Main-Charlzk-Server.charlzk.repl.co/uploadnotencrypted"
-      enctype="multipart/form-data" method="post">
-      <input type="file" name="sampleFile" id="fileInput" required />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Charlzk Uploader</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
+  </head>
+  <body>
+    <center>
+      <h2 style="font-weight: 600">Charlzk File Uploader</h2>
+      <form ref="uploadForm" id="uploadForm" action="https://Main-Charlzk-Server.charlzk.repl.co/uploadnotencrypted" enctype="multipart/form-data" method="post">
+        <input type="file" name="sampleFile" id="fileInputBox" required />
+        <div style="margin-top: 10px">
+          <input type="submit" value="Upload" id="fileInputButton" style="width: 120px" />
+        </div>
+        <div style="margin-top: 10px">
+          <input type="checkbox" id="encryptFileBox" onclick="encryptionBox()" />
+          <font>Encrypt File</font>
+        </div>
+        <div style="margin-top: 10px">
+          <font id="extensionErrorMessage" style="opacity: 0">Invalid extension, Please try again!</font>
+        </div>
+      </form>
+      <hr style="margin-right: 10px; margin-left: 10px; margin-top: 40px; margin-bottom: 40px;" />
+      <h2 style="font-weight: 600">Charlzk Storage Downloader</h2>
       <div style="margin-top: 10px">
-        <input type="submit" value="Upload" id="fileUpload" style="width: 120px" />
+        <input type="text" id="storageDownloaderBox" style="width: 360px" placeholder="File Name / File Hash" />
+        <div style="margin-top: 10px;">
+          <button style="margin-left: 5px" onclick="storageDLClick()" id="storageDownloadButton">Download File</button>
+        </div>
       </div>
-      <div style="margin-top: 10px">
-        <input type="checkbox" id="encryptFileBox" onclick="encryptionBox()" />
-        <font>Encrypt the file</font>
-      </div>
-      <div style="margin-top: 10px">
-        <font id="extensionError" style="opacity: 0">Invalid extension, Please try again!</font>
-      </div>
-    </form>
-    <hr style="
-          margin-right: 10px;
-          margin-left: 10px;
-          margin-top: 10px;
-          margin-bottom: 40px;
-        " />
-    <h2 style="font-weight: 600">Charlzk Storage Downloader</h2>
-    <div style="margin-top: 10px">
-      <input type="text" id="storageDownloader" style="width: 260px" placeholder="File Name / File Hash"
-        keypress="storageDownloaderEnter()" />
-      <button style="margin-left: 5px" onclick="storageDLClick()">
-        Download File
-      </button>
-    </div>
-  </center>
-</body>
-<script type="text/javascript" src="script.js"></script>
-
+    </center>
+  </body>
+  <script type="text/javascript" src="script.js"></script>
 </html>

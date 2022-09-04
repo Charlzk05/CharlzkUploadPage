@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Charlzk Uploader</title>
-    <link id="mainCSS" rel="stylesheet" href="./water.css/light.css">
-  </head>
-  <body>
-    <center>
-      <div>
-        <h2>How did you find my uploader page? 🤨</h2>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Charlzk Uploader</title>
+  <link id="mainCSS" rel="stylesheet" href="./waterLib/light.css">
+</head>
+
+<body>
+  <center>
+    <div>
+      <h2>How did you find my uploader page? 🤨</h2>
+    </div>
+    <hr style="margin-top: 20px; margin-bottom: 20px;" />
+    <h3 style="font-weight: 600">Charlzk File Uploader</h3>
+    <form id="uploadForm" action="https://Main-Charlzk-Server.charlzk.repl.co/uploadnotencrypted"
+      enctype="multipart/form-data" method="post">
+      <input type="file" name="sampleFile" style="width: 560px;" id="fileInputBox" required>
+      <div style="margin-top: 10px">
+        <input type="submit" value="Upload" id="fileInputButton" style="width: 260px" />
       </div>
-      <hr style="margin-top: 20px; margin-bottom: 20px;"/>
-      <h3 style="font-weight: 600">Charlzk File Uploader</h3>
-      <form id="uploadForm" action="https://Main-Charlzk-Server.charlzk.repl.co/uploadnotencrypted" enctype="multipart/form-data" method="post">
-        <input type="file" name="sampleFile" style="width: 560px;" id="fileInputBox" required>
-        <div style="margin-top: 10px">
-          <input type="submit" value="Upload" id="fileInputButton" style="width: 260px" />
-        </div>
-        <div style="margin-top: 20px">
-          <input type="checkbox" id="encryptFileBox" />
-          <font>Encrypt File</font>
-        </div>
-        <div style="margin-top: 10px">
-          <font id="extensionErrorMessage" style="opacity: 0">Invalid extension, Please try again!</font>
-        </div>
-      </form>
-      <hr style="margin-top: 20px; margin-bottom: 20px;"/>
-      <h3 style="font-weight: 600">Charlzk Storage Downloader</h3>
-      <form action="https://Main-Charlzk-Server.charlzk.repl.co/download">
-        <div>
-          <input type="text" name="filename" style="width: 560px" placeholder="File Name / File Hash" required>
-          <div style="margin-top: 10px;">
-            <input type="submit" value="Download File" style="width: 260px;">
-          </div>
-        </div>
-      </form>
-      <hr style="margin-top: 20px; margin-bottom: 20px;"/>
-      <div>
-        <input type="checkbox" id="themeBox">
-        <font>Dark Mode</font>
+      <div style="margin-top: 20px">
+        <input type="checkbox" id="encryptFileBox" />
+        <font>Encrypt File</font>
       </div>
-    </center>
-  </body>
-  <script type="text/javascript" src="script.js"></script>
+      <div style="margin-top: 10px">
+        <font id="extensionErrorMessage" style="opacity: 0">Invalid extension, Please try again!</font>
+      </div>
+    </form>
+    <hr style="margin-top: 20px; margin-bottom: 20px;" />
+    <h3 style="font-weight: 600">Charlzk Storage Downloader</h3>
+    <form action="https://Main-Charlzk-Server.charlzk.repl.co/download">
+      <div>
+        <input type="text" name="filename" style="width: 560px" placeholder="File Name / File Hash" required>
+        <div style="margin-top: 10px;">
+          <input type="submit" value="Download File" style="width: 260px;">
+        </div>
+      </div>
+    </form>
+    <hr style="margin-top: 20px; margin-bottom: 20px;" />
+    <div>
+      <input type="checkbox" id="themeBox">
+      <font>Dark Mode</font>
+    </div>
+  </center>
+</body>
+<script type="text/javascript" src="script.js"></script>
+
 </html>

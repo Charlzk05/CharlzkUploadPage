@@ -1,12 +1,12 @@
 console.log("Hello There :0");
 
+const mainCSS = document.getElementById("mainCSS");
+const uploadForm = document.getElementById("uploadForm");
 const fileInputBox = document.getElementById("fileInputBox");
 const fileInputButton = document.getElementById("fileInputButton");
 const extensionErrorMessage = document.getElementById("extensionErrorMessage");
 const encryptFileBox = document.getElementById("encryptFileBox");
-const storageDownloaderBox = document.getElementById("storageDownloaderBox");
-const storageDownloadButton = document.getElementById("storageDownloadButton");
-const uploadForm = document.getElementById("uploadForm");
+const themeBox = document.getElementById("themeBox");
 
 fileInputBox.addEventListener("input", function(e) {
     var splitFileName = e.target.value.split(".");
@@ -15,32 +15,22 @@ fileInputBox.addEventListener("input", function(e) {
         extensionErrorMessage.setAttribute("style", "opacity: 0;");
     } else {
       fileInputButton.disabled = true;
-        extensionErrorMessage.setAttribute("style",
-            "opacity: 100; color: red; font-size: 10;"
-        );
+        extensionErrorMessage.setAttribute("style", "opacity: 100; color: red; font-size: 10;");
     }
 });
 
-storageDownloaderBox.addEventListener("keypress", function(event) {
-    if (event.key == "Enter") {
-        window.location.href = `https://Main-Charlzk-Server.charlzk.repl.co/download?filename=${storageDownloaderBox.value}`;
-    }
-});
-
-function encryptionBox() {
+encryptFileBox.addEventListener("click", function() {
     if (encryptFileBox.checked == true) {
-        uploadForm.setAttribute(
-            "action",
-            "https://Main-Charlzk-Server.charlzk.repl.co/upload"
-        );
+        uploadForm.setAttribute("action", "https://Main-Charlzk-Server.charlzk.repl.co/upload");
     } else {
-        uploadForm.setAttribute(
-            "action",
-            "https://Main-Charlzk-Server.charlzk.repl.co/uploadnotencrypted"
-        );
+        uploadForm.setAttribute("action", "https://Main-Charlzk-Server.charlzk.repl.co/uploadnotencrypted");
     }
-}
+});
 
-storageDownloadButton.addEventListener("click", function() {
-    window.location.href = `https://Main-Charlzk-Server.charlzk.repl.co/download?filename=${storageDownloaderBox.value}`;
+themeBox.addEventListener("click", function() {
+    if (themeBox.checked == true) {
+        mainCSS.setAttribute("href", "./water.css/dark.css");
+    } else {
+        mainCSS.setAttribute("href", "./water.css/light.css");
+    }
 });
